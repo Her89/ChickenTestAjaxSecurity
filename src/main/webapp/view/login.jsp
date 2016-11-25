@@ -13,10 +13,10 @@
 </head>
 <body>
 
-<h3>Please Sign In</h3>
+<h3><spring:message code="SignIn" /></h3>
 <div class="container-fluid">
 <div class="center-block">
-	<form name="f" th:action="@{/login}" method="post">
+	<form name="f" th:action="login" method="post">
 
 		<label for="username"><spring:message code="Username" /></label> <input class="form-control" type="text"
 			id="username" name="username" /> 
@@ -27,7 +27,7 @@
 			type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 		<br>
 		<br>
-			<button type="submit" class="btn">Log in</button>
+			<button type="submit" class="btn"><spring:message code="LogIn" /></button>
 		
 	</form>
 	</div>
