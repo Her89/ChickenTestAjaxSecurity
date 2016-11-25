@@ -5,6 +5,12 @@ var chickenId = parts[parts.length-1];
 var langParts = url.split("=");
 var lang = langParts[1];
 
+var token = $("meta[name='_csrf']").attr("content");
+var header = $("meta[name='_csrf_header']").attr("content");
+$(document).ajaxSend(function(e, xhr, options) {
+    xhr.setRequestHeader(header, token);
+}); 
+
 $(document).ready(function(){
 	 $.ajaxSetup({ cache: false });
 	 
