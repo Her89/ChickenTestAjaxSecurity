@@ -21,62 +21,6 @@ public class FarmController {
 	@Autowired
 	FarmDAO farmDAO;
 	
-	/*
-	@RequestMapping("/")
-	public ModelAndView List(){
-		List<Farm> farmList = farmDAO.listFarm();
-		return new ModelAndView("Farms/List","farmList", farmList);
-	}
-
-
-	// delete sin ajax
-	
-	@RequestMapping("Delete/{id}")
-	public String Delete (@PathVariable("id")String id){
-		
-		farmDAO.deleteFarm(Long.parseLong(id));
-		return "redirect:/Farms/";
-	}
-
-	*/
-	
-
-	/*
-	@RequestMapping(path="New", method=RequestMethod.POST)
-	public String newFarms(@ModelAttribute("farm")Farm farm){
-		if(farm.getName().isEmpty()){
-			return "redirect:/Farms/";
-		}
-		farmDAO.addFarm(farm);
-
-		return "redirect:/Farms/";
-	}
-	
-
-
-	@RequestMapping("Update/{id}")
-	public ModelAndView updateFarm(@PathVariable("id")String Id){
-		
-		ModelAndView m = new ModelAndView("Farms/Update");
-		m.addObject("farm", farmDAO.getFarm(Long.parseLong(Id)));
-		return m;
-	}
-	
-	@RequestMapping(path="Update", method=RequestMethod.POST)
-	public String updateFarms(@ModelAttribute("farm")Farm farm){
-		if(farm.getName().isEmpty()){
-			return "redirect:/Farms/";
-
-		}
-		farmDAO.updateFarm(farm);
-
-		return "redirect:/Farms/";
-	}
-	
-	*/
-	//list aJAx
-
-
 	@RequestMapping("/")
 	public ModelAndView List1(){
 		ModelAndView m = new ModelAndView("Farms/List");

@@ -14,22 +14,29 @@
 <body>
 
 <h3><spring:message code="SignIn" /></h3>
-<div class="container-fluid">
-<div class="center-block">
-	<form name="f" th:action="login" method="post">
+<div>
+<div>
 
-		<label for="username"><spring:message code="Username" /></label> <input class="form-control" type="text"
-			id="username" name="username" /> 
-			<br>
-			<label for="password"><spring:message code="Password" /></label>
-		<input class="form-control" type="password" id="password" name="password" /> 
-		<input
+	<form name="f" th:action="login" method="post">
+<table>
+		<tr><td>
+		<label for="username"><spring:message code="Username" /></label> </td>
+		<td><input class="form-control" type="text"	id="username" name="username" /> </td>
+		</tr><tr>
+		<td><label for="password"><spring:message code="Password" /></label></td>
+		<td><input type="password" id="password" name="password" /></td>
+		</tr> 
+		<tr>
+		<td colspan="2" align="right"><button type="submit" class="btn"><spring:message code="LogIn" /></button></td>
+	</tr>
+	</table>	
+	<input
 			type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-		<br>
-		<br>
-			<button type="submit" class="btn"><spring:message code="LogIn" /></button>
-		
 	</form>
+	
+	<font color="red">
+	<span>${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message} </span>
+	</font>
 	</div>
 	</div>
 </body>
