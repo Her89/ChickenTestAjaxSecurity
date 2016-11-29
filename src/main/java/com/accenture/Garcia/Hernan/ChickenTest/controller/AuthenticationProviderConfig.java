@@ -22,8 +22,8 @@ public class AuthenticationProviderConfig {
     public UserDetailsService userDetailsService(){
     	JdbcDaoImpl jdbcImpl = new JdbcDaoImpl();
     	jdbcImpl.setDataSource(dataSource());
-    	jdbcImpl.setUsersByUsernameQuery("select username,password, enabled from users where username=?");
-    	jdbcImpl.setAuthoritiesByUsernameQuery("select b.username, a.role from user_roles a, users b where b.username=? and a.userid=b.userid");
+    	jdbcImpl.setUsersByUsernameQuery("select username,password, status from user where username=?");
+    	jdbcImpl.setAuthoritiesByUsernameQuery("select b.username, a.roleName from role a inner join usersandroles c on c.role_id = a.id inner join user b on b.id=c.user_id where b.username=?");
     	return jdbcImpl;
     }
 }
