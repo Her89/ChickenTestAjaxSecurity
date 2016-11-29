@@ -18,6 +18,7 @@
 </head>
 <body>
 <br/><br />
+<h3><spring:message code="Welcome" /> <sec:authentication property="name"/>! </h3>
 <spring:message code="Roles" /><sec:authentication property="authorities"/>
 <br>
 <br>
