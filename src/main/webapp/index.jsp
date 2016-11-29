@@ -1,4 +1,6 @@
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -15,7 +17,10 @@
 	
 </head>
 <body>
-
+<br/><br />
+<spring:message code="Roles" /><sec:authentication property="authorities"/>
+<br>
+<br>
 <br>
 <a href="<%=request.getContextPath()%>/Farms/?language=en">Go to Farm List</a>
 <br>
