@@ -21,8 +21,8 @@
 <h3><spring:message code="Welcome" /> <sec:authentication property="name"/>! </h3>
 <spring:message code="Roles" /><sec:authentication property="authorities"/>
 <br>
-<br>
-<br>
+<a href="${pageContext.request.contextPath}/logout"><spring:message code="Logout" /></a><br>
+<br><br>
 <a href="<%=request.getContextPath()%>/Farms/?language=en">Go to Farm List</a>
 <br>
 <br>

@@ -98,12 +98,7 @@
     <artifactId>spring-security-taglibs</artifactId>
 			<version>${spring.security.version}</version>
 </dependency>
-   <dependency>
-    <groupId>org.thymeleaf</groupId>
-    <artifactId>thymeleaf</artifactId>
-    <version>3.0.2.RELEASE</version>
-</dependency>
-   
+
   </dependencies>
   
     	<build>

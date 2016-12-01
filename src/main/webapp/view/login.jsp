@@ -6,7 +6,7 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 	<head>
 
 <title>ChickenTest</title>
@@ -17,17 +17,17 @@
 <div>
 <div>
 
-	<form name="f" th:action="login" method="post">
+	<form name="f" action="login" method="post">
 <table>
 		<tr><td>
 		<label for="username"><spring:message code="Username" /></label> </td>
-		<td><input class="form-control" type="text"	id="username" name="username" /> </td>
+		<td><input  type="text"	id="username" name="username" /> </td>
 		</tr><tr>
 		<td><label for="password"><spring:message code="Password" /></label></td>
 		<td><input type="password" id="password" name="password" /></td>
 		</tr> 
 		<tr>
-		<td colspan="2" align="right"><button type="submit" class="btn"><spring:message code="LogIn" /></button></td>
+		<td colspan="2" align="right"><button type="submit" name="submit"><spring:message code="LogIn" /></button></td>
 	</tr>
 	</table>	
 	<input
