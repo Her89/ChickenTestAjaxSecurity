@@ -34,10 +34,16 @@
 			type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 	</form>
 	
+	
+	
 	<font color="red">
 	<span>${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message} </span>
 	</font>
+	<br>
+	
 	</div>
 	</div>
+			<a href="${pageContext.request.contextPath}/register"> Sign Up</a>
+	
 </body>
 </html>

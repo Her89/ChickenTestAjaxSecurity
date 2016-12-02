@@ -41,6 +41,8 @@
 				<value>com.accenture.Garcia.Hernan.ChickenTest.model.Farm</value>
 				<value>com.accenture.Garcia.Hernan.ChickenTest.model.Chicken</value>
 				<value>com.accenture.Garcia.Hernan.ChickenTest.model.Egg</value>
+				<value>com.accenture.Garcia.Hernan.ChickenTest.model.User</value>
+				<value>com.accenture.Garcia.Hernan.ChickenTest.model.Role</value>
 
 			</list>
 		</property>
@@ -78,6 +80,12 @@
 	<bean id="farmDAO" class="com.accenture.Garcia.Hernan.ChickenTest.data.FarmDAO" />
 	<bean id="chickenDAO" class="com.accenture.Garcia.Hernan.ChickenTest.data.ChickenDAO" />
 	<bean id="eggDAO" class="com.accenture.Garcia.Hernan.ChickenTest.data.EggDAO" />
+		<bean id="userDAO" class="com.accenture.Garcia.Hernan.ChickenTest.data.UserDAO" />
+				<bean id="roleDAO" class="com.accenture.Garcia.Hernan.ChickenTest.data.RoleDAO" />
+		
+<bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+		
+		
 	
 		 <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 <property name="basename" value="/resources/messages/messages"/>
