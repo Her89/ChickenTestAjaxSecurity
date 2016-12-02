@@ -23,8 +23,10 @@ public class SharedController {
 	
 	
 	@RequestMapping("/login")
-	public String login(){
-		return "login";
+	public ModelAndView login(){
+		ModelAndView m = new ModelAndView("login");
+		m.addObject("user", new User());
+		return m;
 	}
 	
 	
