@@ -118,10 +118,11 @@ background-color:  #66cc66;
 		<label for="username" class="col-sm-2 control-label">Username:</label>
 		<div class="col-sm-10">
 			<input type="text" name="username" class="form-control" id="username"/>
-		</div>
-		<div  id="userError">
+		</div></div>
+		<div  class=" form-group"  >
+		
+		<div  id="userError" >  </div>
 			
-		</div>
 		</div>
 			<div class="form-group" id="password_group">
 		<label for="password" class="col-sm-2 control-label">Password:</label>
@@ -135,11 +136,13 @@ background-color:  #66cc66;
 		<div class="col-sm-10">
 			<input type="password" name="password_again" id="password_again" class="form-control" />
 		</div>
+		<div  class=" form-group"  >
+		
 			<div  id="passwordError" >
-			
+			</div>
 		</div>
 	</div>
-       
+     
        </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -165,12 +168,12 @@ background-color:  #66cc66;
 		
 	
 		
-	if(checkPassword()){
+	
 		
 	checkUsername().done(function(r){
 		
 		
-		if(userCheck(r)){
+		if(userCheck(r) && checkPassword()){
 			
 			var user={
 					username: $("#username").val(),
@@ -197,7 +200,7 @@ background-color:  #66cc66;
 				
 				
 				
-			}
+			
 			
 			
 		});
