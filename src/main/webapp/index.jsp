@@ -9,6 +9,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Farm administration</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/estilo.css"/>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -17,11 +24,11 @@
 	
 </head>
 <body>
-<br/><br />
+<%@ include file="/view/header.jsp" %>
+<br />
 <h3><spring:message code="Welcome" /> <sec:authentication property="name"/>! </h3>
-<spring:message code="Roles" /><sec:authentication property="authorities"/>
 <br>
-<a href="${pageContext.request.contextPath}/logout"><spring:message code="Logout" /></a><br>
+
 <br><br>
 <a href="<%=request.getContextPath()%>/Farms/?language=en">Go to Farm List</a>
 <br>
