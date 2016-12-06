@@ -2,6 +2,8 @@ package com.accenture.Garcia.Hernan.ChickenTest.data;
 
 import java.util.List;
 
+import javax.persistence.NoResultException;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -25,6 +27,22 @@ public class UserDAO {
 		User user = (User) session.load(User.class, id);
 		session.close();
 		return user;
+	}
+	
+	@Transactional
+	public User getUserByName(String username) {
+		Session session = sessionFactory.openSession();
+		try{
+		User user = (User) session.createQuery("from User where username=:name").setParameter("name", username).getSingleResult();
+		session.close();
+		return user;
+		}catch(NoResultException e){
+			session.close();
+
+			return null;
+		}
+		
+		
 	}
 	
 	public List<User> listUser() {

@@ -5,10 +5,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.accenture.Garcia.Hernan.ChickenTest.data.RoleDAO;
 import com.accenture.Garcia.Hernan.ChickenTest.data.UserDAO;
+import com.accenture.Garcia.Hernan.ChickenTest.model.Farm;
 import com.accenture.Garcia.Hernan.ChickenTest.model.User;
 
 @Controller
@@ -41,19 +43,32 @@ public class SharedController {
 	}
 	
 	@RequestMapping(path="register", method=RequestMethod.POST)
-	public String signUp(@ModelAttribute("user")User user){
+	@ResponseBody
+	public void signUp( User user){
 		
-		
+		System.out.println(user.getPassword() + user.getUsername());
 		user.getRoles().add(roleDAO.getRoleByName("User"));
 		
 		userDAO.addUser(user);
-		
-		return "redirect:/login";
-		
+				
 	}
 
 	
-	
+	@RequestMapping(path="checkUser", method=RequestMethod.POST)
+	public @ResponseBody String checkUser(User user){
+		
+		User search=userDAO.getUserByName(user.getUsername());
+		
+		if(search==null)
+		{
+			return "available";
+		}
+		else{
+			return "N/A";
+		}
+
+
+	}
 	
 	
 }
