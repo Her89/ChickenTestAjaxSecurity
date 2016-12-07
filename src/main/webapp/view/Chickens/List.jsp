@@ -1,6 +1,8 @@
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
     <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
     <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+    <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
+    
     
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -12,8 +14,10 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/estilo.css"/>
 
 <script>var contextPath = "${pageContext.request.contextPath}"</script>
-
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/jquery.i18n.properties.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/scriptC.js"></script>
 
@@ -22,6 +26,31 @@
 
 </head>
 <body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand active" href="${pageContext.request.contextPath}"> Farm Administration</a>
+    </div>
+    <ul class="nav navbar-nav">
+      
+      <sec:authorize access="hasAuthority('Admin')">
+      <li><a href="#"><spring:message code="Users" /></a></li>
+      </sec:authorize>
+      <li>
+      <a class="btn  dropdown-toggle" data-toggle="dropdown"><spring:message code="Language" />
+    <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+      <li><a href="?language=en">English</a></li>
+      <li><a href="?language=es">Spanish</a></li>
+    </ul></li>
+      </ul>
+      
+      <ul class=" nav navbar-nav navbar-right">
+      <li><a class="  " href="${pageContext.request.contextPath}/logout"><spring:message code="Logout" /></a></li>
+    </ul>
+  </div>
+</nav>
 <a href="?language=es"> Español</a> | 
 <a href="?language=en"> English</a>
 <br><br>
@@ -68,7 +97,6 @@
 <a href="${pageContext.request.contextPath}/Farms/?language=${param.language}"> <spring:message code="Return" /> </a>
 
 <br><br>
-<a href="${pageContext.request.contextPath}/logout"><spring:message code="Logout" /></a>
 
 
 </body>

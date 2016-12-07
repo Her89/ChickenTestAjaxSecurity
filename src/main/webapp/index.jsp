@@ -7,25 +7,43 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/estilo.css"/>
+  
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Farm administration</title>
 
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/estilo.css"/>
-
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-<script type="text/javascript" src="<%=request.getContextPath()%>/resources/jquery.i18n.properties.js"></script>
-	
 </head>
 <body>
-<%@ include file="/view/header.jsp" %>
-<br />
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand active" href="${pageContext.request.contextPath}"> Farm Administration</a>
+    </div>
+    <ul class="nav navbar-nav">
+      
+      <sec:authorize access="hasAuthority('Admin')">
+      <li><a href="#"><spring:message code="Users" /></a></li>
+      </sec:authorize>
+      
+      </ul>
+      
+      <ul class=" nav navbar-nav navbar-right">
+      <li><a class="  " href="${pageContext.request.contextPath}/logout"><spring:message code="Logout" /></a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<br>
+<br>
 <h3><spring:message code="Welcome" /> <sec:authentication property="name"/>! </h3>
 <br>
 

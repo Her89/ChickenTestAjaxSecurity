@@ -32,21 +32,12 @@ public class SharedController {
 	}
 	
 	
-	@RequestMapping("/register")
-	public ModelAndView register(){
-		
-		
-		ModelAndView m = new ModelAndView("register");
-		m.addObject("user", new User());
-		return m;
-		
-	}
+
 	
 	@RequestMapping(path="register", method=RequestMethod.POST)
 	@ResponseBody
 	public void signUp( User user){
 		
-		System.out.println(user.getPassword() + user.getUsername());
 		user.getRoles().add(roleDAO.getRoleByName("User"));
 		
 		userDAO.addUser(user);
