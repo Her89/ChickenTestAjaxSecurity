@@ -58,7 +58,7 @@
 
 
 <br>
-<table>
+<table class="table-condensed">
 <tr>
 <th class="text-center"><spring:message code="Name" /></th>
 <th class="text-center"><spring:message code="th.Chickens" /></th>

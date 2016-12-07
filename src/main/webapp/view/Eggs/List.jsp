@@ -58,7 +58,7 @@
 
 <br>
 
-<table>
+<table class="table-condensed">
 <thead>
 <tr>
 <th class="text-center"><spring:message code="Color" /></th>

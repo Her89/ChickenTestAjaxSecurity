@@ -216,10 +216,10 @@ function fillTable (data){
 						$("<td>").append( data.eggList[index].color )
 						)
 				.append(
-						$("<td>").append( "<button class=\"update\"  name=\""+data.eggList[index].color+"\" id=\""+ data.eggList[index].id +"\"> "+$.i18n.prop('Update')+" </button> ")
+						$("<td>").append( "<button class=\"update btn btn-success \"  name=\""+data.eggList[index].color+"\" id=\""+ data.eggList[index].id +"\"> <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span> </button> ")
 						)
 				.append(
-						$("<td>").append( "<button class=\"delete\" id=\""+ data.eggList[index].id +"\"> "+$.i18n.prop('Delete')+" </button> ")
+						$("<td>").append( "<button class=\"delete btn btn-danger \" id=\""+ data.eggList[index].id +"\"> <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span> </button> ")
 						))
 	}
 }

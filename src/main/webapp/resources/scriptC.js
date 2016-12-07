@@ -217,10 +217,10 @@ function fillTable (data){
 						$('<td>').append( "<a href=\"../Eggs/"+ data.chickenList[index].id +"?language="+lang+"\">"+$.i18n.prop('List')+" </a> ")
 						)
 				.append(
-						$("<td>").append( "<button class=\"update \"  name=\""+data.chickenList[index].name+"\" id=\""+ data.chickenList[index].id +"\"> "+$.i18n.prop('Update')+" </button> ")
+						$("<td>").append( "<button class=\"update btn btn-success \"  name=\""+data.chickenList[index].name+"\" id=\""+ data.chickenList[index].id +"\"> <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span> </button> ")
 						)
 				.append(
-						$("<td>").append( "<button class=\"delete \" id=\""+ data.chickenList[index].id +"\"> "+$.i18n.prop('Delete')+" </button> ")
+						$("<td>").append( "<button class=\"delete btn btn-danger \" id=\""+ data.chickenList[index].id +"\">  <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span> </button> ")
 						))
 	}
 }
