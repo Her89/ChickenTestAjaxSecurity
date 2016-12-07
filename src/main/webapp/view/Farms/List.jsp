@@ -59,14 +59,12 @@
 
 <br>
 <table>
-<thead>
 <tr>
-<th><spring:message code="Name" /></th>
-<th><spring:message code="th.Chickens" /></th>
-<th><spring:message code="Update" /></th>
-<th><spring:message code="Delete" /></th>
+<th class="text-center"><spring:message code="Name" /></th>
+<th class="text-center"><spring:message code="th.Chickens" /></th>
+<th class="text-center"><spring:message code="Update" /></th>
+<th class="text-center"><spring:message code="Delete" /></th>
 </tr>
-</thead>
 <tbody id="results">
 </tbody>
 

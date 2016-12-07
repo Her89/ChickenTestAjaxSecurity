@@ -56,13 +56,14 @@
 <br><br>	
 <h3><spring:message code="title.EggList" />:</h3>
 
+<br>
 
 <table>
 <thead>
 <tr>
-<th><spring:message code="Color" /></th>
-<th><spring:message code="Update" /></th>
-<th><spring:message code="Delete" /></th>
+<th class="text-center"><spring:message code="Color" /></th>
+<th class="text-center"><spring:message code="Update" /></th>
+<th class="text-center"><spring:message code="Delete" /></th>
 </tr>
 </thead>
 <tbody id="results">

@@ -58,15 +58,16 @@
 
 <h3><spring:message code="ChickenList" />:</h3>
 
+<br>
 
 <table>
 <thead>
 <tr>
-<th><spring:message code="Name" /></th>
-<th><spring:message code="TotalEggs" /></th>
-<th><spring:message code="EggList" /></th>
-<th><spring:message code="Update" /></th>
-<th><spring:message code="Delete" /></th>
+<th class="text-center"><spring:message code="Name" /></th>
+<th class="text-center"><spring:message code="TotalEggs" /></th>
+<th class="text-center"><spring:message code="EggList" /></th>
+<th class="text-center"><spring:message code="Update" /></th>
+<th class="text-center"><spring:message code="Delete" /></th>
 </tr>
 </thead>
 <tbody id="results">
