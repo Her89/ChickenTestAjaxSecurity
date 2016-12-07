@@ -217,8 +217,10 @@ function fillTable (data){
 						$('<td>').append( "<a href=\"../Eggs/"+ data.chickenList[index].id +"?language="+lang+"\">"+$.i18n.prop('List')+" </a> ")
 						)
 				.append(
+						$("<td>").append( "<button class=\"update \"  name=\""+data.chickenList[index].name+"\" id=\""+ data.chickenList[index].id +"\"> "+$.i18n.prop('Update')+" </button> ")
 						)
 				.append(
+						$("<td>").append( "<button class=\"delete \" id=\""+ data.chickenList[index].id +"\"> "+$.i18n.prop('Delete')+" </button> ")
 						))
 	}
 }
