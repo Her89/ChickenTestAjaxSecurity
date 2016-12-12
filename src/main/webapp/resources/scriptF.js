@@ -22,13 +22,10 @@ $(document).ready(function(){
 	 
 	loadList();	
 	
-	$("#FormDiv").hide();
 	
 
 	$("#nameError").hide();
 	
-	$("#cancel").on("click", function(){
-		$("#FormDiv").hide()});
 	
 	$("table").on("click",".delete", function(){
 		var url= "Delete/"+$(this).attr('id')	
@@ -44,7 +41,6 @@ $(document).ready(function(){
 		$("#Form").removeClass("Update").addClass("New");
 		$("#title").text($.i18n.prop('NewFarm'));
 		$("#name").val("");
-		$("#FormDiv").show();
 		$("#nameError").hide();
 
 
@@ -77,8 +73,7 @@ $(document).ready(function(){
 			success: function(data){
 				loadList()
 				$("#name").val("")
-				$("#FormDiv").hide();
-			}
+				$('#myModal').modal('toggle');			}
 		})
 					
 					
@@ -102,9 +97,8 @@ $(document).ready(function(){
 				data: farm,
 				success: function(data){
 					loadList()
-					$("#FormDiv").hide();
 					$("#name").val("");
-
+					$('#myModal').modal('toggle');	
 				}
 			})
 						
@@ -124,7 +118,6 @@ $(document).ready(function(){
 		$("#Form").removeClass("New").addClass("Update");
 		$("#title").text($.i18n.prop('ModifyFarm'));
 
-		$("#FormDiv").show();
 		$("#nameError").hide();
 
 		$("#name").val($(this).attr('name'));
@@ -188,7 +181,7 @@ function fillTable (data){
 						$('<td>').append( "<a href=\"../Chickens/"+ data[index].id +"?language="+lang+"\">"+$.i18n.prop('List')+" </a> ")
 						)
 				.append(
-						$("<td>").append( "<button class=\"update  btn btn-success\" name=\""+data[index].name+"\" id=\""+ data[index].id +"\"><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span> </button> ")
+						$("<td>").append( "<button class=\"update  btn btn-success\" data-toggle=\"modal\" data-target=\"#myModal\" name=\""+data[index].name+"\" id=\""+ data[index].id +"\"><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span> </button> ")
 						)
 				.append(
 						$("<td>").append( "<button class=\"delete btn btn-danger\" id=\""+ data[index].id +"\">  <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span> </button> ")

@@ -73,23 +73,47 @@
 <br>
 <div id="noInfo" class="error"></div>
 <br><br>	
-<button id="new"><spring:message code="NewEgg" /></button>
 
+   <button id="new" type="button" class="btn btn-default .btn-sm" data-toggle="modal" data-target="#myModal">
+ <spring:message code="NewEgg" />
+</button>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><spring:message code="NewEgg" /></h4>
+      </div>
+            <div class="modal-body row">
+      
 
 <div id="FormDiv">
 <form action="" method="post"  id="Form">
-		<h3 id="title"><spring:message code="NewEgg" /></h3>
 		
-		<label ><spring:message code="Color" /> </label>
-		<input type="text" id="name"/>
+		 <div class="form-group" id="name_group">
+		<label for="name" class="col-sm-2 control-label"><spring:message code="Color" />:</label>
+		<div class="col-sm-10">
+			<input type="text" name="name" class="form-control" id="name"/>
+		</div></div>
+		
+		
 		<span id="nameError" class="error"></span>
 		
 		<br><br>
 	
-		<button  id="submit"> OK </button>
-	</form>
-
+   
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" id="submit">OK</button>
+        </div>
+        		</form>
+            </div>
+      </div>
+    </div>
+  </div>
 </div>
+<br>
 <br><br>
 <a href="" id="return"> <spring:message code="Return" /> </a>
 <br><br>

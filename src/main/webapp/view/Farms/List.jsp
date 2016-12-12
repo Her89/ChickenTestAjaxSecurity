@@ -70,25 +70,44 @@
 
 </table>
 <br><br>	
-<button id="new"> <spring:message code="NewFarm" /></button>
 
 
-<div id="FormDiv">
-<form action="" method="post"  id="Form">
-		<h3 id="title"><spring:message code="NewFarm" /></h3>
+
+    <button id="new" type="button" class="btn btn-default .btn-sm" data-toggle="modal" data-target="#myModal">
+ <spring:message code="NewFarm" />
+</button>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><spring:message code="NewFarm" /></h4>
+      </div>
+      <div class="modal-body row">
+      <div id="FormDiv">
+      <form action="" method="post"  id="Form">
+       <div class="form-group" id="name_group">
+		<label for="name" class="col-sm-2 control-label"><spring:message code="Name" />:</label>
+		<div class="col-sm-10">
+			<input type="text" name="name" class="form-control" id="name"/>
+		</div></div>
 		
-		<label ><spring:message code="Name" /> </label>
-		<input type="text" id="name"/>
+		
 		<span id="nameError" class="error"></span>
 		
 		<br><br>
 	
-		<button  id="submit"> OK </button>
-		</form>
-	<button  style="display:inline" id="cancel"> <spring:message code="btn.Cancel" /></button>
-		
-	
-
+   
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" id="submit">OK</button>
+        </div>
+        		</form>
+            </div>
+      </div>
+    </div>
+  </div>
 </div>
 <br><br>
 </body>

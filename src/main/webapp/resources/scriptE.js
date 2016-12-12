@@ -26,7 +26,6 @@ $(document).ready(function(){
 	
 	loadList();	
 	
-	$("#FormDiv").hide();
 	
 	
 	$("#nameError").hide();
@@ -48,7 +47,6 @@ $(document).ready(function(){
 		$("#Form").removeClass("Update").addClass("New");
 		$("#title").text($.i18n.prop('NewEgg'));
 		$("#name").val("");
-		$("#FormDiv").show();
 
 		
 	});
@@ -81,8 +79,10 @@ $(document).ready(function(){
 			data: egg,
 			success: function(data){
 				loadList()
+				
 				$("#name").val("")
-				$("#FormDiv").hide();
+				$('#myModal').modal('toggle');	
+
 			}
 		})
 					
@@ -109,8 +109,9 @@ $(document).ready(function(){
 				
 				success: function(data){
 					loadList()
-					$("#FormDiv").hide();
 					$("#name").val("");
+					$('#myModal').modal('toggle');	
+
 
 				}
 
@@ -135,7 +136,6 @@ $(document).ready(function(){
 		$("#title").text($.i18n.prop('ModifyEgg'));
 		$("#nameError").hide();
 
-		$("#FormDiv").show();
 		
 		$("#name").val($(this).attr('name'));
 		$("#name").attr('eggID', $(this).attr('id'));
@@ -216,7 +216,7 @@ function fillTable (data){
 						$("<td>").append( data.eggList[index].color )
 						)
 				.append(
-						$("<td>").append( "<button class=\"update btn btn-success \"  name=\""+data.eggList[index].color+"\" id=\""+ data.eggList[index].id +"\"> <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span> </button> ")
+						$("<td>").append( "<button class=\"update btn btn-success \"  data-toggle=\"modal\" data-target=\"#myModal\" name=\""+data.eggList[index].color+"\" id=\""+ data.eggList[index].id +"\"> <span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span> </button> ")
 						)
 				.append(
 						$("<td>").append( "<button class=\"delete btn btn-danger \" id=\""+ data.eggList[index].id +"\"> <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span> </button> ")
