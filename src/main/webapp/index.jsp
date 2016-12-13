@@ -35,7 +35,7 @@
     <ul class="nav navbar-nav">
       
       <sec:authorize access="hasAuthority('Admin')">
-      <li><a href="#"><spring:message code="Users" /></a></li>
+      <li><a href="${pageContext.request.contextPath}/Users/"><spring:message code="Users" /></a></li>
       </sec:authorize>
       </ul>
       

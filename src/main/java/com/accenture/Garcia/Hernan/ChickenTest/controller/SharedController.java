@@ -1,5 +1,7 @@
 package com.accenture.Garcia.Hernan.ChickenTest.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -32,6 +34,7 @@ public class SharedController {
 	}
 	
 	
+	
 
 	
 	@RequestMapping(path="register", method=RequestMethod.POST)
@@ -44,6 +47,8 @@ public class SharedController {
 				
 	}
 
+
+	
 	
 	@RequestMapping(path="checkUser", method=RequestMethod.POST)
 	public @ResponseBody String checkUser(User user){

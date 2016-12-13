@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,6 +14,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Proxy;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name="user")
@@ -30,8 +33,9 @@ public class User {
 	private boolean enabled=true;
 	
 	
-	@ManyToMany
+	@ManyToMany(fetch=FetchType.EAGER)
 	@JoinTable(name="usersandroles", joinColumns= @JoinColumn(name="user_id"), inverseJoinColumns= @JoinColumn(name="role_id"))
+	@JsonManagedReference
 	private List<Role> roles=new ArrayList<Role>();
 
 	public long getId() {

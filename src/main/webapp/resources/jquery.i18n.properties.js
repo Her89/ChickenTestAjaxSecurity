@@ -53,7 +53,7 @@
       mode: 'vars',
       cache: false,
       encoding: 'UTF-8',
-      async: false,
+      async: true,
       checkAvailableLanguages: false,
       callback: null
     };
