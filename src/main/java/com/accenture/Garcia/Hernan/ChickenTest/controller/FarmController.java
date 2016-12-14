@@ -15,7 +15,7 @@ import com.accenture.Garcia.Hernan.ChickenTest.model.Farm;
 
 
 @Controller
-@RequestMapping("Farms")
+@RequestMapping("/")
 public class FarmController {
 	
 	@Autowired
@@ -24,8 +24,6 @@ public class FarmController {
 	@RequestMapping("/")
 	public ModelAndView List1(){
 		ModelAndView m = new ModelAndView("Farms/List");
-
-		m.addObject("farm", new Farm());
 
 		return m;
 	}

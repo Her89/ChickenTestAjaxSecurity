@@ -11,9 +11,12 @@
 <head>
 <meta name="_csrf" content="${_csrf.token}"/>
 <meta name="_csrf_header" content="${_csrf.headerName}"/> 
+
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/estilo.css"/>
 
 <script>var contextPath = "${pageContext.request.contextPath}"</script>
+<script>var lang = "${pageContext.response.locale}"</script>
+
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -97,7 +100,7 @@
 </div>
 <br>
 <br><br>
-<a href="${pageContext.request.contextPath}/Farms/?language=${param.language}"> <spring:message code="Return" /> </a>
+<a href="${pageContext.request.contextPath}/?language=${param.language}"> <spring:message code="Return" /> </a>
 
 <br><br>
 

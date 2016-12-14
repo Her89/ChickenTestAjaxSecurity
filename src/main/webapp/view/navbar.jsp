@@ -22,7 +22,6 @@
     <div class="collapse navbar-collapse" id="myNavbar">
     <ul class="nav navbar-nav">
     
-    <li><a href="<%=request.getContextPath()%>/Farms/?language=${pageContext.response.locale}"><spring:message code="title.Farm" /></a></li>
       
       <sec:authorize access="hasAuthority('Admin')">
       <li><a href="${pageContext.request.contextPath}/Users/"><spring:message code="Users" /></a></li>
@@ -37,6 +36,8 @@
     </ul>
       
       <ul class=" nav navbar-nav navbar-right">
+      
+      <li><a><em>Logged in as:  </em><strong><sec:authentication property="name"/></strong></a>	</li>
       <li><a class="  " href="${pageContext.request.contextPath}/logout"><spring:message code="Logout" /></a></li>
     </ul>
   </div>

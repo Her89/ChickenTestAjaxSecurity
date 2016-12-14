@@ -24,12 +24,7 @@ public class SharedController {
 	RoleDAO roleDAO;
 	
 	
-	@RequestMapping("/")
-	public String index(){
-		
-		return "index";
-	}
-	
+
 	
 	@RequestMapping("/login")
 	public ModelAndView login(){

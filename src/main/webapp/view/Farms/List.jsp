@@ -10,12 +10,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta name="_csrf" content="${_csrf.token}"/>
+<meta name="_csrf" content="${_csrf.token}"/>	
 <meta name="_csrf_header" content="${_csrf.headerName}"/> 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/estilo.css"/>
 
 
 <script>var contextPath = "${pageContext.request.contextPath}"</script>
+<script>var lang = "${pageContext.response.locale}"</script>
+
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">

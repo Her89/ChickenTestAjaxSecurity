@@ -1,6 +1,4 @@
-var url = window.location.href.toString();
-var langParts = url.split("=");
-var lang = langParts[1];
+
 var token = $("meta[name='_csrf']").attr("content");
 var header = $("meta[name='_csrf_header']").attr("content");
 $(document).ajaxSend(function(e, xhr, options) {
@@ -178,7 +176,7 @@ function fillTable (data){
 						$("<td>").append( data[index].name )
 						)
 				.append(
-						$('<td>').append( "<a href=\"../Chickens/"+ data[index].id +"?language="+lang+"\">"+$.i18n.prop('List')+" </a> ")
+						$('<td>').append( "<a href=\"Chickens/"+ data[index].id +"?language="+lang+"\">"+$.i18n.prop('List')+" </a> ")
 						)
 				.append(
 						$("<td>").append( "<button class=\"update  btn btn-success\" data-toggle=\"modal\" data-target=\"#myModal\" name=\""+data[index].name+"\" id=\""+ data[index].id +"\"><span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span> </button> ")
