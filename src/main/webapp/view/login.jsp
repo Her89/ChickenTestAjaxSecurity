@@ -22,7 +22,13 @@
 </head>
 <body class="login">
 
+
 <div class="container">
+
+     <a href="?language=en">English</a> |
+      <a href="?language=es">Spanish</a>
+      
+      <br><br>
 
       <form class="form-signin" name="f" action="login" method="post">
         <h2 class="form-signin-heading"><spring:message code="SignIn" /></h2>
@@ -42,7 +48,7 @@
      <input	type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
      <br>
      <button type="button" class="btn btn-lg btn-success btn-block" data-toggle="modal" data-target="#myModal">
- Register
+<spring:message code="SignUp" />
 </button>
       </form>
 
@@ -66,13 +72,13 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+        <h4 class="modal-title" id="myModalLabel"><spring:message code="SignUp" /></h4>
       </div>
       <div class="modal-body row">
       
       
        <div class="form-group" id="user_group">
-		<label for="username" class="col-sm-2 control-label">Username:</label>
+		<label for="username" class="col-sm-2 control-label"><spring:message code="Username" />:</label>
 		<div class="col-sm-10">
 			<input type="text" name="username" class="form-control" id="username"/>
 		</div></div>
@@ -82,14 +88,14 @@
 			
 		</div>
 			<div class="form-group" id="password_group">
-		<label for="password" class="col-sm-2 control-label">Password:</label>
+		<label for="password" class="col-sm-2 control-label"><spring:message code="Password" />:</label>
 		<div class="col-sm-10">
 			<input type="password" name="password" id="password" class="form-control" />
 		</div>
 		
 	</div>
 	<div class="form-group" id="pass_again_group">
-		<label for="password_again" class="col-sm-2 control-label">Confirm Password:</label>
+		<label for="password_again" class="col-sm-2 control-label"><spring:message code="Confirm" />:</label>
 		<div class="col-sm-10">
 			<input type="password" name="password_again" id="password_again" class="form-control" />
 		</div>
@@ -102,8 +108,8 @@
      
        </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" id="btn_register">Register</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><spring:message code="Cancel" /></button>
+        <button type="submit" class="btn btn-primary" id="btn_register"><spring:message code="Save" /></button>
       </div>
     </div>
   </div>

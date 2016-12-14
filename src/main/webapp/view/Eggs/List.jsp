@@ -28,37 +28,8 @@
 
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand active" href="${pageContext.request.contextPath}"> Farm Administration</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-    <ul class="nav navbar-nav">
-      
-      <sec:authorize access="hasAuthority('Admin')">
-      <li><a href="#"><spring:message code="Users" /></a></li>
-      </sec:authorize>
-      <li class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown"><spring:message code="Language" />
-    <span class="caret"></span></a>
-    <ul class="dropdown-menu">
-      <li><a href="?language=en">English</a></li>
-      <li><a href="?language=es">Spanish</a></li>
-    </ul></li>
-      </ul>
-      
-      <ul class=" nav navbar-nav navbar-right">
-      <li><a class="  " href="${pageContext.request.contextPath}/logout"><spring:message code="Logout" /></a></li>
-    </ul>
-  </div>
-  </div>
-</nav>	
+<jsp:include page="../navbar.jsp" />
+
 <br>
 <br><br>	
 <h3><spring:message code="title.EggList" />:</h3>
