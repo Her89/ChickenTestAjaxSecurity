@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/estilo.css"/>
 
 <script>var contextPath = "${pageContext.request.contextPath}"</script>
+<script>var lang = "${pageContext.response.locale}"</script>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 

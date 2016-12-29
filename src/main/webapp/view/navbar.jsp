@@ -36,9 +36,13 @@
     </ul>
       
       <ul class=" nav navbar-nav navbar-right">
-      
-      <li><a><em>Logged in as:  </em><strong><sec:authentication property="name"/></strong></a>	</li>
+      <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <strong><sec:authentication property="name"/></strong>
+    <span class="caret"></span></a>
+    <ul class="dropdown-menu">
       <li><a class="  " href="${pageContext.request.contextPath}/logout"><spring:message code="Logout" /></a></li>
+    </ul></li>
+
     </ul>
   </div>
   </div>

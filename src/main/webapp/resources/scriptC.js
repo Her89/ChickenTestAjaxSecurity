@@ -2,8 +2,7 @@
 var url = window.location.href.toString();
 var parts = url.split("/");
 var farmId = parts[parts.length-1];
-var langParts = url.split("=");
-var lang = langParts[1];
+
 
 var token = $("meta[name='_csrf']").attr("content");
 var header = $("meta[name='_csrf_header']").attr("content");
